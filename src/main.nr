@@ -1,11 +1,10 @@
 mod utils;
 use utils::merkle_proof;
+use utils::DEPTH;
 
 use dep::std::hash::poseidon::bn254::hash_1;
 use dep::std::hash::poseidon::bn254::hash_2;
 use dep::std::hash::poseidon::bn254::hash_3;
-
-global DEPTH = 16;
 
 struct Output {
     root: Field,

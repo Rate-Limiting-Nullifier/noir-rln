@@ -5,7 +5,7 @@
 
 <div align="center">
 
-*This code wasn't audited. Use at your own risk. If you want audited version use [circom-rln](https://github.com/Rate-Limiting-Nullifier/circom-rln)*
+*This code wasn't audited. Use at your own risk. If you want audited version use [circom-rln](https://github.com/Rate-Limiting-Nullifier/circom-rln)*.
 
 </div>
 
@@ -16,4 +16,4 @@ ___
 RLN is a zero-knowledge gadget that enables spam 
 prevention in anonymous environments.
 
-To learn more on RLN and how it works - check out [documentation](https://rate-limiting-nullifier.github.io/rln-docs/)
+To learn more on RLN and how it works - check out [documentation](https://rate-limiting-nullifier.github.io/rln-docs/).
