@@ -14,21 +14,21 @@ struct Output {
 
 fn main(
     identitySecret: Field, 
-    userMessageLimit: Field,
-    messageId: Field,
-    pathSelectors: [Field; DEPTH],
+    userMessageLimit: u16,
+    messageId: u16,
+    pathSelectors: [u1; DEPTH],
     pathElements: [Field; DEPTH],
     x: pub Field, 
     externalNullifier: pub Field
 ) -> pub Output {
     let identityCommitment = hash_1([identitySecret]);
-    let rateCommitment = hash_2([identityCommitment, userMessageLimit]);
+    let rateCommitment = hash_2([identityCommitment, userMessageLimit as Field]);
 
     let root = merkle_proof(rateCommitment, pathSelectors, pathElements);
 
-    assert(messageId as u16 < userMessageLimit as u16);
+    assert(messageId < userMessageLimit, "messageId exceeds limit");
 
-    let a1 = hash_3([identitySecret, externalNullifier, messageId]);
+    let a1 = hash_3([identitySecret, externalNullifier, messageId as Field]);
     let y = identitySecret + a1 * x;
 
     let nullifier = hash_1([a1]);

@@ -1,5 +1,7 @@
 [package]
+name="noir_rln"
+type="bin"
 authors = [""]
-compiler_version = "0.6.0"
+compiler_version = ">=0.19.2"
 
 [dependencies]
